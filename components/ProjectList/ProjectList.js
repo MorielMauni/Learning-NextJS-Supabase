@@ -5,6 +5,7 @@ export default async function ProjectList() {
     cache: "no-cache",
   });
   const repos = await response.json();
+  // throw new Error('Error')
   return (
     <>
       <div className="p-20">

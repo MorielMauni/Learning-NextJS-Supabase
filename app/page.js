@@ -2,6 +2,7 @@ import Image from "next/image";
 import ProjectPage from "./about/Projects/page";
 
 export default function Home() {
+  // throw new Error('error')
   return (
     <>
       <h2 className="padding: 24px">Hello</h2>
