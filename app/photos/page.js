@@ -1,5 +1,6 @@
 import Image from "next/image";
 import dog1 from "@/public/images/dog1.png";
+import dog2 from "@/public/images/dog2.png";
 
 export default function PhotosPage() {
   return (
@@ -15,6 +16,22 @@ export default function PhotosPage() {
               className="object-cover w-full h-full"
               alt="Dog-1"
               sizes="(max-width: 768px) 100vw, 50vw"
+              priority={true}
+              quality={50}
+              placeholder="blur"
+            />
+          </div>
+
+          <div className="relative h-60">
+            <Image
+              fill
+              src={dog2}
+              className="object-cover w-full h-full"
+              alt="Dog-2"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority={true}
+              quality={50}
+              placeholder="blur"
             />
           </div>
         </div>
