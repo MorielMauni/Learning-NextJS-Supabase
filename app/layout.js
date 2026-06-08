@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import "./globals.css";
 import SiennaWidget from "../components/accessibility/SiennaWidget.js";
 import Header from "@/components/Header/Header";
+import Chatbot from "@/components/chatbot/chatbot";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main className="mt-12">{children}</main>
         <SiennaWidget />
+        <Chatbot/>
       </body>
     </html>
   );
