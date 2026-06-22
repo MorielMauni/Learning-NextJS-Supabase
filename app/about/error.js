@@ -1,20 +1,29 @@
-'use client' // Error boundaries must be Client Components
- 
+'use client' // Error components must be Client Components
+
 import { useEffect } from 'react'
- 
-export default function ErrorPage({ error, unstable_retry }) {
+import { useRouter } from 'next/navigation'
+import { startTransition } from 'react'
+
+export default function Error({ error, reset }) {
   useEffect(() => {
     // Log the error to an error reporting service
     console.error(error)
   }, [error])
- 
+
+  const router = useRouter()
+
   return (
     <div>
-      <h2 className='text-red-600'>Something went wrong!</h2>
-      <button className='text-blue-700'
+      <h2>Something went wrong!</h2>
+      <button
         onClick={
-          // Attempt to recover by re-fetching and re-rendering the segment
-          () => unstable_retry()
+          // Attempt to recover by trying to re-render the segment
+          () => {
+            startTransition(() => {
+              router.refresh()
+              reset()
+            })
+          }
         }
       >
         Try again
