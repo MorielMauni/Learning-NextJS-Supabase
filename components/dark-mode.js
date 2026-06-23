@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import useDarkMode from "@/hooks/use-dark-mode";
 
@@ -8,9 +8,8 @@ const nextModeIcons = {
   dark: "🌞",
 };
 
-export default function DarkMode() {
-  
-  const {theme, toggleTheme} = useDarkMode()  
+export default function DarkMode({ defaultTheme }) {
+  const { theme, toggleTheme } = useDarkMode(defaultTheme);
 
   return (
     <>
